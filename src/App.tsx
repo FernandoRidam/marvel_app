@@ -1,10 +1,18 @@
 import {
+  ThemeProvider,
+} from 'styled-components';
+
+import {
   Router,
 } from './router';
 
+import theme from './theme';
+
 function App() {
   return (
-    <Router />
+    <ThemeProvider theme={ theme }>
+      <Router />
+    </ThemeProvider>
   );
 }
 
