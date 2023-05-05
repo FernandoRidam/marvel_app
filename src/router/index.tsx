@@ -12,8 +12,11 @@ import {
   AppLayout,
   AuthLayout,
 } from "../layouts";
-import { Login } from "../screens";
-import { RecoverPassword } from "../screens/RecoverPassword";
+
+import {
+  Login,
+  RecoverPassword,
+} from "../screens";
 
 export const Router = () => {
   const authenticated = false;
