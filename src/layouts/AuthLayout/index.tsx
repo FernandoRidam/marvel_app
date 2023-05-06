@@ -3,6 +3,7 @@ import {
 } from "../../components";
 
 import {
+  BgImg,
   Content,
   Header,
   Layout,
@@ -28,7 +29,7 @@ export const AuthLayout: React.FC<AuthLayoutProps> = ({
       </Header>
 
       <Row>
-        <img
+        <BgImg
           id="bg-img"
           src={ bg_img }
           alt="BG-IMG"
