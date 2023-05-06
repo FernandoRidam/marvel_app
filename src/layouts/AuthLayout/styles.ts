@@ -25,16 +25,14 @@ export const Row = styled.div`
     #bg-img {
       display: none;
     }
-
-    #auth-content {
-      margin-left: 0;
-    }
   }
 `;
 
+export const BgImg = styled.img`
+  margin-right: 144px;
+`;
+
 export const Content = styled.div`
-  padding: 40px 36px;
   border-radius: 24px;
-  margin-left: 140px;
   background-color: ${({ theme }) => theme.COLORS.WHITE };
 `;

@@ -16,6 +16,7 @@ import {
 import {
   Login,
   RecoverPassword,
+  SelectAgent,
 } from "../screens";
 
 export const Router = () => {
@@ -40,6 +41,11 @@ export const Router = () => {
                   <Route
                     path="/recover-password"
                     element={<RecoverPassword />}
+                  />
+
+                  <Route
+                    path="/select-agent"
+                    element={<SelectAgent />}
                   />
                 </Routes>
               </AuthLayout>
