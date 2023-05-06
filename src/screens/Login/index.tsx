@@ -78,7 +78,11 @@ export const Login = () => {
 
   return (
     <Content>
-      <Title>Bem-vindo</Title>
+      <Title>
+        <span>Bem-vindo</span>
+        <span>.</span>
+      </Title>
+
       <SubTitle>informe as suas credenciais de acesso ao portal</SubTitle>
 
       <Form onSubmit={ handleSubmit( onSubmit )}>
@@ -103,14 +107,15 @@ export const Login = () => {
         >
           entrar
         </Button>
-
-        <Link
-          Icon={ Shield }
-          onClick={() => navigate('/recover-password')}
-        >
-          Esqueceu a senha?
-        </Link>
       </Form>
+
+      <Link
+        Icon={ Shield }
+        onClick={() => navigate('/recover-password')}
+        align="right"
+      >
+        Esqueceu a senha?
+      </Link>
     </Content>
   );
 };

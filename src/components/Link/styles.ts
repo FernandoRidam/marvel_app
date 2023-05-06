@@ -1,11 +1,26 @@
 import styled from 'styled-components';
 
-export const SlimButton = styled.a`
+interface SlimButtonProps {
+  align: 'left' | 'right';
+};
+
+export const SlimButton = styled.a<SlimButtonProps>`
   display: flex;
   flex-direction: row;
   align-items: center;
   cursor: pointer;
-  align-self: flex-end;
+  align-self: ${({ align }) => {
+    switch ( align ) {
+      case 'left':
+        return 'flex-start';
+
+      case 'right':
+          return 'flex-end';
+
+      default:
+        return 'flex-start';
+    }
+  }};
   margin-top: 24px;
 
   font-family: ${({ theme }) => theme.FONT.FAMILY.EPILOGUE };
