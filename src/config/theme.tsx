@@ -5,6 +5,7 @@ const theme=  {
 
     DIVIDER: '#EBEFF2',
 
+    BLUE_900: '#101828',
     BLUE_800: '#00113D',
     BLUE_700: '#081B4E',
     BLUE_600: '#213770',
@@ -16,9 +17,11 @@ const theme=  {
     ORANGE_300: '#FF6557',
 
     GRAY_500: '#777777',
-    GRAY_400: '#B7B7B7',
-    GRAY_300: '#C3C3C3',
-    GRAY_100: '#EAECF0',
+    GRAY_400: '#667085',
+    GRAY_300: '#B7B7B7',
+    GRAY_200: '#C3C3C3',
+    GRAY_100: '#F2F4F7',
+    GRAY_50: '#F9FAFB',
     GRAY_BG: '#F5F6F8',
   },
 
@@ -50,9 +53,9 @@ const theme=  {
   },
 
   BREAKPOINTS: {
-    SM: 800,
-    MD: 1000,
-    LG: 1200,
+    SM: '800px',
+    MD: '1000px',
+    LG: '1200px',
   },
 };
 

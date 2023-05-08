@@ -1,4 +1,8 @@
 import {
+  Provider,
+} from 'react-redux';
+
+import {
   ThemeProvider,
 } from 'styled-components';
 
@@ -16,7 +20,11 @@ import {
   Router,
 } from './router';
 
-import theme from './theme';
+import {
+  store,
+} from './store';
+
+import theme from './config/theme';
 
 function App() {
   const alertIconDefaultProps: IconProps = {
@@ -47,7 +55,9 @@ function App() {
           error: <XCircle { ...alertIconDefaultProps }/>,
         }}
       >
-        <Router />
+        <Provider store={ store }>
+          <Router />
+        </Provider>
       </SnackbarProvider>
     </ThemeProvider>
   );

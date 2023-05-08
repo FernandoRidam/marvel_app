@@ -21,7 +21,7 @@ export const Row = styled.div`
   justify-content: center;
   padding-top: 40px;
 
-  @media (max-width: ${({ theme }) => theme.BREAKPOINTS.LG }px) {
+  @media (max-width: ${({ theme }) => theme.BREAKPOINTS.LG }) {
     #bg-img {
       display: none;
     }

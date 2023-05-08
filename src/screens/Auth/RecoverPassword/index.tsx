@@ -20,17 +20,9 @@ import {
 } from '@phosphor-icons/react';
 
 import {
-  enqueueSnackbar,
-} from 'notistack';
-
-import {
-  login,
-} from '../../services';
-
-import {
   RecoveryPasswordFormData,
   RecoveryPasswordSchema,
-} from '../../schema';
+} from '../../../schema';
 
 import {
   TextField,
@@ -38,12 +30,12 @@ import {
   Title,
   Button,
   Link,
-} from '../../components';
+} from '../../../components';
 
 import {
   Content,
   Form,
-} from './styles';
+} from '../styles';
 
 export const RecoverPassword = () => {
   const navigate = useNavigate();
@@ -111,6 +103,7 @@ export const RecoverPassword = () => {
                 <Button
                   disabled={ !isValid }
                   type="submit"
+                  fullWidth
                 >
                   enviar link
                 </Button>

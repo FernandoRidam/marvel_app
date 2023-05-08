@@ -9,6 +9,14 @@ import {
 } from "react-router-dom";
 
 import {
+  useSelector,
+} from 'react-redux';
+
+import {
+  RootState,
+} from '../store';
+
+import {
   AppLayout,
   AuthLayout,
 } from "../layouts";
@@ -20,7 +28,13 @@ import {
 } from "../screens";
 
 export const Router = () => {
-  const authenticated = false;
+  const {
+    agent,
+  } = useSelector(( state: RootState ) => state );
+  console.log("AGENT => ", agent );
+
+  const authenticated = !!agent.id;
+
   return (
     <BrowserRouter>
       {
@@ -55,7 +69,17 @@ export const Router = () => {
                 <Routes>
                   <Route
                     path="/*"
-                    element={<Navigate to="/login"/>}
+                    element={<Navigate to="/home"/>}
+                  />
+
+                  <Route
+                    path="/home"
+                    element={<><span>HOME</span></>}
+                  />
+
+                  <Route
+                    path="/profile"
+                    element={<><span>PROFILE</span></>}
                   />
                 </Routes>
               </AppLayout>
