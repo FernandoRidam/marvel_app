@@ -31,7 +31,6 @@ import {
   SubTitle,
   Title,
   Select,
-  IOption,
 } from '../../../components';
 
 import {
@@ -43,8 +42,14 @@ import {
   SelectAgentData,
   SelectAgentSchema,
 } from '../../../schema';
-import { save } from '../../../store/agentSlice';
-import { Agent } from '../../../@types/agent';
+
+import {
+  save,
+} from '../../../store/agentSlice';
+
+import {
+  Agent,
+} from '../../../@types/agent';
 
 export const SelectAgent = () => {
   const navigate = useNavigate();
@@ -100,7 +105,7 @@ export const SelectAgent = () => {
 
     dispatch( save( agent ));
 
-    navigate('/home');
+    navigate('/profile');
   };
 
   return (
@@ -138,7 +143,7 @@ export const SelectAgent = () => {
         />
 
         <Button
-          // disabled={ !isValid }
+          disabled={ !isValid }
           type="submit"
           size="small"
         >
