@@ -13,10 +13,6 @@ interface OptionProps {
   selected: boolean;
 };
 
-interface AvatarProps {
-  url: string;
-};
-
 export const FieldView = styled.div`
   position: relative;
   margin-bottom: 16px;
@@ -147,21 +143,9 @@ export const Option = styled.div<OptionProps>`
   }
 `;
 
-export const Avatar = styled.div<AvatarProps>`
-  width: 24px;
-  height: 24px;
-  margin-right: 8px;
-  border-radius: 12px;
-
-  background-image: url(${({ url }) => url });
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-clip: border-box;
-`;
-
 export const Label = styled.span`
   flex: 1;
+  margin-left: 8px;
   font-weight: ${({ theme }) => theme.FONT.WEIGHT.MEDIUM };
   color: ${({ theme }) => theme.COLORS.BLUE_900 };
   overflow-x: hidden;
