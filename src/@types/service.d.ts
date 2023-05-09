@@ -1,12 +1,18 @@
-interface Result<T> {
+interface ResultArray<T> {
   total: number;
   data: Array<T>;
+};
+
+interface SuccessResponseArray<T> {
+  success: true;
+  message: string;
+  result: ResultArray<T>;
 };
 
 interface SuccessResponse<T> {
   success: true;
   message: string;
-  result: Result<T>;
+  result: T;
 };
 
 interface FailResponse {
@@ -15,4 +21,5 @@ interface FailResponse {
   result: null;
 };
 
+export type ResponseArray<T> = SuccessResponseArray<T> | FailResponse;
 export type Response<T> = SuccessResponse<T> | FailResponse;

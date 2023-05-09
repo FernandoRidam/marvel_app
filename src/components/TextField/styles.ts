@@ -24,7 +24,7 @@ export const InputView = styled.div<InputProps>`
       ? theme.COLORS.BLUE_500
       : error
           ? theme.COLORS.ORANGE_400
-          : theme.COLORS.GRAY_300
+          : theme.COLORS.GRAY_600
   };
   width: 100%;
   border-radius: 8px;
@@ -43,14 +43,14 @@ export const Input = styled.input`
 
   font-size: ${({ theme }) => theme.FONT.SIZE.MD };
   font-family: ${({ theme }) => theme.FONT.FAMILY.EPILOGUE };
-  font-weight: ${({ theme }) => theme.FONT.WEIGHT.BOLD };;
+  font-weight: ${({ theme }) => theme.FONT.WEIGHT.BOLD };
   color: ${({ theme }) => theme.COLORS.BLUE_500 };
 
   &::placeholder {
     font-size: ${({ theme }) => theme.FONT.SIZE.SM };
     font-family: ${({ theme }) => theme.FONT.FAMILY.EPILOGUE };
-    font-weight: ${({ theme }) => theme.FONT.WEIGHT.REGULAR };;
-    color: ${({ theme }) => theme.COLORS.GRAY_300 };
+    font-weight: ${({ theme }) => theme.FONT.WEIGHT.REGULAR };
+    color: ${({ theme }) => theme.COLORS.GRAY_600 };
   }
 `;
 
@@ -65,7 +65,7 @@ export const IconView = styled.div<InputProps>`
       ? theme.COLORS.BLUE_500
       : error
           ? theme.COLORS.ORANGE_400
-          : theme.COLORS.GRAY_300
+          : theme.COLORS.GRAY_600
   };
   transition: all 400ms;
 `;

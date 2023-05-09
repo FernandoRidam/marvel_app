@@ -84,6 +84,9 @@ export const TextField: React.FC<TextFieldProps> = ({
                     focused={ focused }
                     error={ !!error }
                     onClick={() => setShow( !show )}
+                    style={{
+                      cursor: 'pointer',
+                    }}
                   >
                     {
                       show

@@ -38,7 +38,7 @@ export const Field = styled.div<OpenProps>`
       ? theme.COLORS.BLUE_500
       : error
           ? theme.COLORS.ORANGE_400
-          : theme.COLORS.GRAY_300
+          : theme.COLORS.GRAY_600
   };
   border-radius: 8px;
   padding-left: 16px;
@@ -50,7 +50,7 @@ export const Field = styled.div<OpenProps>`
   };
   transition: all .4s;
 
-  color: ${({ theme }) => theme.COLORS.GRAY_400 };
+  color: ${({ theme }) => theme.COLORS.GRAY_700 };
 `;
 
 export const Placeholder = styled.span`
@@ -74,7 +74,7 @@ export const OptionsView = styled( motion.div ).attrs({
   background-color: ${({ theme }) => theme.COLORS.WHITE };
   border-radius: 8px;border-style: solid;
   border-width: 1px;
-  border-color: ${({ theme }) => theme.COLORS.GRAY_100 };
+  border-color: ${({ theme }) => theme.COLORS.GRAY_200 };
 
   box-shadow: 0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03);
 `;
@@ -106,7 +106,7 @@ export const Search = styled.input`
   padding-right: 16px;
   border-style: solid;
   border-width: 0.1px;
-  border-color: ${({ theme }) => theme.COLORS.GRAY_300 };
+  border-color: ${({ theme }) => theme.COLORS.GRAY_600 };
   width: 100%;
   border-radius: 8px;
   margin-bottom: 8px;
@@ -115,7 +115,7 @@ export const Search = styled.input`
 
   font-size: ${({ theme }) => theme.FONT.SIZE.MD };
   font-family: ${({ theme }) => theme.FONT.FAMILY.EPILOGUE };
-  font-weight: ${({ theme }) => theme.FONT.WEIGHT.BOLD };;
+  font-weight: ${({ theme }) => theme.FONT.WEIGHT.BOLD };
   color: ${({ theme }) => theme.COLORS.BLUE_500 };
 
   &:focus {
@@ -125,8 +125,8 @@ export const Search = styled.input`
   &::placeholder {
     font-size: ${({ theme }) => theme.FONT.SIZE.SM };
     font-family: ${({ theme }) => theme.FONT.FAMILY.EPILOGUE };
-    font-weight: ${({ theme }) => theme.FONT.WEIGHT.REGULAR };;
-    color: ${({ theme }) => theme.COLORS.GRAY_300 };
+    font-weight: ${({ theme }) => theme.FONT.WEIGHT.REGULAR };
+    color: ${({ theme }) => theme.COLORS.GRAY_600 };
   }
 `;
 
@@ -136,10 +136,10 @@ export const Option = styled.div<OptionProps>`
   flex-direction: row;
   padding: 16px;
   transition: all .2s;
-  background-color: ${({ theme, selected }) => selected ? theme.COLORS.GRAY_50 : 'transparent' };
+  background-color: ${({ theme, selected }) => selected ? theme.COLORS.GRAY_100 : 'transparent' };
 
   &:active {
-    background-color: ${({ theme }) => theme.COLORS.GRAY_50 };
+    background-color: ${({ theme }) => theme.COLORS.GRAY_100 };
   }
 `;
 

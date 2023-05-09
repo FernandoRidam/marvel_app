@@ -49,6 +49,7 @@ export const RecoverPassword = () => {
       isValid,
     }
   } = useForm<RecoveryPasswordFormData>({
+    mode: 'onChange',
     defaultValues: {
       email: 'shield@marvel.com',
     },

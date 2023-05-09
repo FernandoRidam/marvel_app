@@ -38,7 +38,7 @@ export const Tab = styled.button<TabProps>`
   font-family: ${({ theme }) => theme.FONT.FAMILY.EPILOGUE };
   font-weight: ${({ theme }) => theme.FONT.WEIGHT.MEDIUM };
   font-size: ${({ theme }) => theme.FONT.SIZE.SM };
-  color: ${({ theme, selected }) => selected ? theme.COLORS.BLUE_700 : theme.COLORS.GRAY_500 };
+  color: ${({ theme, selected }) => selected ? theme.COLORS.BLUE_700 : theme.COLORS.GRAY_800 };
   transition: all .4s;
 
   &:active {
@@ -94,7 +94,7 @@ export const Description = styled.span`
   font-family: ${({ theme }) => theme.FONT.FAMILY.EPILOGUE };
   font-weight: ${({ theme }) => theme.FONT.WEIGHT.SEMI_BOLD };
   font-size: ${({ theme }) => theme.FONT.SIZE.MD };
-  color: ${({ theme }) => theme.COLORS.GRAY_600 };
+  color: ${({ theme }) => theme.COLORS.GRAY_900 };
   line-height: 24px;
   letter-spacing: -0.03em;
 `;
@@ -103,7 +103,7 @@ export const ListItem = styled.li`
   font-family: ${({ theme }) => theme.FONT.FAMILY.INTER };
   font-weight: ${({ theme }) => theme.FONT.WEIGHT.SEMI_BOLD };
   font-size: ${({ theme }) => theme.FONT.SIZE.MD };
-  color: ${({ theme }) => theme.COLORS.GRAY_400 };
+  color: ${({ theme }) => theme.COLORS.GRAY_700 };
   line-height: 24px;
   letter-spacing: 0;
 `;

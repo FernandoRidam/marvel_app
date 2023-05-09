@@ -16,13 +16,15 @@ const theme=  {
     ORANGE_400: '#F43724',
     ORANGE_300: '#FF6557',
 
-    GRAY_600: '#717171',
-    GRAY_500: '#777777',
-    GRAY_400: '#667085',
-    GRAY_300: '#B7B7B7',
-    GRAY_200: '#C3C3C3',
-    GRAY_100: '#F2F4F7',
-    GRAY_50: '#F9FAFB',
+    GRAY_900: '#717171',
+    GRAY_800: '#777777',
+    GRAY_700: '#667085',
+    GRAY_600: '#B7B7B7',
+    GRAY_500: '#C3C3C3',
+    GRAY_400: '#D0D5DD',
+    GRAY_300: '#EAECF0',
+    GRAY_200: '#F2F4F7',
+    GRAY_100: '#F9FAFB',
     GRAY_BG: '#F5F6F8',
   },
 
@@ -54,9 +56,10 @@ const theme=  {
   },
 
   BREAKPOINTS: {
-    SM: '800px',
-    MD: '1000px',
-    LG: '1200px',
+    XS: '800px',
+    SM: '1000px',
+    MD: '1150px',
+    LG: '1300px',
   },
 };
 

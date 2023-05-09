@@ -51,7 +51,7 @@ export const AppLayout: React.FC<AppLayoutProps> = ({
     },
 
     {
-      path: '/profile',
+      path: `/profile`,
       name: 'Perfil',
       Icon: User,
     },
@@ -65,7 +65,7 @@ export const AppLayout: React.FC<AppLayoutProps> = ({
 
   return (
     <Layout>
-      <LeftMenu>
+      <LeftMenu id="left-menu-app-layout-id">
         <TopMenu>
           <Logo
             width={ 105 }
@@ -80,7 +80,7 @@ export const AppLayout: React.FC<AppLayoutProps> = ({
           items.map(({ Icon, name, path }) =>
             <ItemMenu
               key={ name }
-              selected={ path === pathname }
+              selected={ pathname.includes( path )}
               onClick={() => navigate( path )}
             >
               <Icon

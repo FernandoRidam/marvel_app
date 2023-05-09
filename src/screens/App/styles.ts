@@ -4,7 +4,8 @@ export const Content = styled.div`
   display: flex;
   flex: 1;
   flex-direction: column;
-  padding-top: 71px;
+  align-items: center;
+  overflow: hidden;
 `;
 
 export const Container = styled.div`

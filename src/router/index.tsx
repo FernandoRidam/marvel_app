@@ -34,7 +34,7 @@ export const Router = () => {
     agent,
   } = useSelector(( state: RootState ) => state );
 
-  const authenticated = !!agent.id;
+  const authenticated = !!agent;
 
   return (
     <BrowserRouter>
@@ -80,6 +80,11 @@ export const Router = () => {
 
                   <Route
                     path="/profile"
+                    element={<Profile />}
+                  />
+
+                  <Route
+                    path="/profile/:id"
                     element={<Profile />}
                   />
                 </Routes>
