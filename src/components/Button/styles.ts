@@ -42,13 +42,13 @@ export const Action = styled.button<ActionProps>`
     }
   }}
   border-radius: 8px;
-  background-color: ${({ theme, disabled }) => disabled ? theme.COLORS.GRAY_200 : theme.COLORS.BLUE_700 };
+  background-color: ${({ theme, disabled }) => disabled ? theme.COLORS.GRAY_500 : theme.COLORS.BLUE_700 };
   font-family: ${({ theme }) => theme.FONT.FAMILY.EPILOGUE };
   color: ${({ theme }) => theme.COLORS.WHITE };
   transition: all 200ms;
 
   &:active {
-    background-color: ${({ theme, disabled }) => disabled ? theme.COLORS.GRAY_200 : theme.COLORS.BLUE_500 };
+    background-color: ${({ theme, disabled }) => disabled ? theme.COLORS.GRAY_500 : theme.COLORS.BLUE_500 };
   }
 `;
 

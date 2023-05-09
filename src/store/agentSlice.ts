@@ -1,40 +1,25 @@
 import {
+  useSelector,
+} from 'react-redux';
+
+import {
   PayloadAction,
   SliceCaseReducers,
   createSlice,
 } from '@reduxjs/toolkit';
 
-import {
-  Agent,
-} from '../@types/agent';
+const initialState: number = 0;
 
-const initialState: Agent = {
-  id: 0,
-  name: '',
-  description: '',
-  thumbnail: {
-    path: '',
-    extension: '',
-  },
-};
+const _save = ( state: number, action: PayloadAction<number>) => state = action.payload;
+const _reset = ( state: number ) => state = initialState;
 
-const agentSlice = createSlice<Agent, SliceCaseReducers<Agent>>({
+const agentSlice = createSlice<number, SliceCaseReducers<number>>({
   name: 'agent',
   initialState,
   reducers: {
-    save: ( state, action: PayloadAction<Agent>) => {
-      state.id = action.payload.id;
-      state.name = action.payload.name;
-      state.description = action.payload.description;
-      state.thumbnail = action.payload.thumbnail;
-    },
+    save: _save,
 
-    reset: ( state ) => {
-      state.id = initialState.id;
-      state.name = initialState.name;
-      state.description = initialState.description;
-      state.thumbnail = initialState.thumbnail;
-    }
+    reset: _reset,
   },
 });
 

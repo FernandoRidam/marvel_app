@@ -23,7 +23,7 @@ import {
 } from 'notistack';
 
 import {
-  getAgent,
+  getAgents,
 } from '../../../services';
 
 import {
@@ -70,6 +70,7 @@ export const SelectAgent = () => {
       isValid,
     }
   } = useForm<SelectAgentData>({
+    mode: 'onChange',
     defaultValues: {},
     resolver: yupResolver( SelectAgentSchema ),
   });
@@ -81,7 +82,7 @@ export const SelectAgent = () => {
       success,
       message,
       result,
-    } = await getAgent( search, page, 10 );
+    } = await getAgents( search, page, 10 );
 
     if( success ) {
       setTotal( result.total );
@@ -101,11 +102,9 @@ export const SelectAgent = () => {
   };
 
   const onSubmit = ( data: SelectAgentData ) => {
-    const agent = agents.find(( agent ) => agent.id === data.agent );
+    dispatch( save( data.agent ));
 
-    dispatch( save( agent ));
-
-    navigate('/profile');
+    navigate(`/profile/${ data.agent }`);
   };
 
   return (

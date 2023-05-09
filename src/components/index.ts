@@ -7,3 +7,5 @@ export * from './Link';
 export * from './Select';
 export * from './Divider';
 export * from './Avatar';
+export * from './Pagination';
+export * from './CardAgent';

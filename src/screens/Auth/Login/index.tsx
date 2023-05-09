@@ -52,6 +52,7 @@ export const Login = () => {
       isValid,
     }
   } = useForm<LoginData>({
+    mode: 'onChange',
     defaultValues: {
       email: 'shield@marvel.com',
       password: '12345678',

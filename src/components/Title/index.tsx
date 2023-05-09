@@ -31,6 +31,6 @@ export const Title = styled.span<TitleProps>`
 
 span:nth-child( 3 ) {
   font-weight: ${({ theme }) => theme.FONT.WEIGHT.LIGHT };
-  color: ${({ theme }) => theme.COLORS.GRAY_500 };
+  color: ${({ theme }) => theme.COLORS.GRAY_800 };
 };
 `;

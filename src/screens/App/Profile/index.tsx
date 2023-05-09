@@ -1,10 +1,19 @@
 import {
+  useEffect,
+  useState,
+} from 'react';
+
+import {
+  useParams,
+} from 'react-router-dom';
+
+import {
   useSelector,
 } from 'react-redux';
 
 import {
-  RootState,
-} from '../../../store';
+  enqueueSnackbar,
+} from 'notistack';
 
 import {
   Divider,
@@ -14,19 +23,59 @@ import {
 import {
   Container,
   Content,
-} from './styles';
+} from '../styles';
 
 import {
   ContentTab,
 } from './ContentTab';
 
+import {
+  getAgent,
+} from '../../../services';
+
+import {
+  Agent,
+} from '../../../@types/agent';
+
+import {
+  RootState,
+} from '../../../store';
+
 export const Profile = () => {
   const {
-    agent,
+    agent: _agent,
   } = useSelector(( state: RootState ) => state );
 
+  const [ agent, setAgent ] = useState<Agent | null>( null );
+
+  const { id } = useParams();
+
+  const loadAgent = async () => {
+    const {
+      success,
+      message,
+      result,
+    } = await getAgent( id ? Number( id ) : _agent );
+
+    if( success ) {
+      setAgent( result );
+    } else {
+      enqueueSnackbar( message, {
+        variant: 'error',
+      })
+    }
+  };
+
+  useEffect(() => {
+    loadAgent();
+  }, []);
+
   return (
-    <Content>
+    <Content
+      style={{
+        paddingTop: 71,
+      }}
+    >
       <Divider />
 
       <Container>
@@ -37,14 +86,17 @@ export const Profile = () => {
             paddingLeft: 36,
           }}
         >
-          <span>Profile</span>
+          <span>Perfil</span>
           <span> / </span>
-          <span>{ agent.name }</span>
+          <span>{ agent?.name }</span>
         </Title>
 
-        <ContentTab
-          agent={ agent }
-        />
+        {
+          agent &&
+            <ContentTab
+              agent={ agent }
+            />
+        }
       </Container>
     </Content>
   );
