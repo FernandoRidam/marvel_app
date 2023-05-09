@@ -16,6 +16,7 @@ const theme=  {
     ORANGE_400: '#F43724',
     ORANGE_300: '#FF6557',
 
+    GRAY_600: '#717171',
     GRAY_500: '#777777',
     GRAY_400: '#667085',
     GRAY_300: '#B7B7B7',

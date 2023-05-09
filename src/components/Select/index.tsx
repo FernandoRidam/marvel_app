@@ -21,7 +21,6 @@ import {
 } from '@phosphor-icons/react';
 
 import {
-  Avatar,
   ErrorText,
   Field,
   FieldView,
@@ -36,6 +35,7 @@ import {
   SearchView,
 } from './styles';
 import theme from '../../config/theme';
+import { Avatar } from '../Avatar';
 
 export interface IOption {
   value: number | string;
@@ -142,7 +142,10 @@ export const Select: React.FC<SelectProps> = ({
             >
              {
                 selected && selected.avatar
-                  ? <Avatar url={ selected.avatar } />
+                  ? <Avatar
+                      url={ selected.avatar }
+                      size={ 24 }
+                    />
                   : <User
                       weight="bold"
                       style={{
@@ -196,7 +199,11 @@ export const Select: React.FC<SelectProps> = ({
                                   setShowOptions( false );
                                 }}
                               >
-                                { option.avatar && <Avatar url={ option.avatar } />}
+                                { option.avatar && <Avatar
+                                    url={ option.avatar }
+                                    size={ 24 }
+                                  />
+                                }
 
                                 <Label>{ option.label }</Label>
 

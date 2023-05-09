@@ -22,7 +22,9 @@ import {
 } from "../layouts";
 
 import {
+  Home,
   Login,
+  Profile,
   RecoverPassword,
   SelectAgent,
 } from "../screens";
@@ -31,7 +33,6 @@ export const Router = () => {
   const {
     agent,
   } = useSelector(( state: RootState ) => state );
-  console.log("AGENT => ", agent );
 
   const authenticated = !!agent.id;
 
@@ -74,12 +75,12 @@ export const Router = () => {
 
                   <Route
                     path="/home"
-                    element={<><span>HOME</span></>}
+                    element={<Home />}
                   />
 
                   <Route
                     path="/profile"
-                    element={<><span>PROFILE</span></>}
+                    element={<Profile />}
                   />
                 </Routes>
               </AppLayout>

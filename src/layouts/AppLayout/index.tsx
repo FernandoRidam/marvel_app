@@ -23,7 +23,10 @@ import {
   LeftMenu,
   TopMenu,
 } from './styles';
-import { reset } from '../../store/agentSlice';
+
+import {
+  reset,
+} from '../../store/agentSlice';
 
 interface AppLayoutProps {
   children: React.ReactNode;
@@ -76,6 +79,7 @@ export const AppLayout: React.FC<AppLayoutProps> = ({
         {
           items.map(({ Icon, name, path }) =>
             <ItemMenu
+              key={ name }
               selected={ path === pathname }
               onClick={() => navigate( path )}
             >
