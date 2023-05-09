@@ -25,6 +25,7 @@ export const AuthLayout: React.FC<AuthLayoutProps> = ({
         <Logo
           width={ 169 }
           height={ 50 }
+          variant="light"
         />
       </Header>
 

@@ -11,7 +11,6 @@ import {
 
 import {
   AnimatePresence,
-  motion,
 } from 'framer-motion';
 
 import {
@@ -114,6 +113,7 @@ export const Select: React.FC<SelectProps> = ({
 
   useEffect(() => {
     handleLoadOptions( search ?? '', page );
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ page ]);
 
   useEffect(() => {
