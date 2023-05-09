@@ -6,3 +6,16 @@
   -webkit-font-smoothing: antialiased;
   letter-spacing: -0.065em;
 }
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #B7B7B7;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #777777;
+}

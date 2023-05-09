@@ -22,12 +22,12 @@ import {
 
 import {
   login,
-} from '../../services';
+} from '../../../services';
 
 import {
-  LoginFormData,
+  LoginData,
   LoginSchema,
-} from '../../schema';
+} from '../../../schema';
 
 import {
   TextField,
@@ -35,12 +35,12 @@ import {
   Title,
   Button,
   Link,
-} from '../../components';
+} from '../../../components';
 
 import {
   Content,
   Form,
-} from './styles';
+} from '../styles';
 
 export const Login = () => {
   const navigate = useNavigate();
@@ -51,7 +51,7 @@ export const Login = () => {
     formState: {
       isValid,
     }
-  } = useForm<LoginFormData>({
+  } = useForm<LoginData>({
     defaultValues: {
       email: 'shield@marvel.com',
       password: '12345678',
@@ -59,7 +59,7 @@ export const Login = () => {
     resolver: yupResolver( LoginSchema ),
   });
 
-  const onSubmit = ( data: LoginFormData ) => {
+  const onSubmit = ( data: LoginData ) => {
     const {
       success,
       message,
@@ -69,6 +69,8 @@ export const Login = () => {
       enqueueSnackbar( message, {
         variant: 'success',
       });
+
+      navigate('/select-agent');
     } else {
       enqueueSnackbar( message, {
         variant: 'error',
@@ -104,6 +106,7 @@ export const Login = () => {
           Icon={ SignOut }
           disabled={ !isValid }
           type="submit"
+          fullWidth
         >
           entrar
         </Button>

@@ -13,4 +13,4 @@ export const LoginSchema = yup.object({
     .required( requiredFieldMessage ),
 }).required();
 
-export type LoginFormData = yup.InferType<typeof LoginSchema>;
+export type LoginData = yup.InferType<typeof LoginSchema>;

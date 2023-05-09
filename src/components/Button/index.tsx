@@ -3,10 +3,12 @@ import {
 } from '@phosphor-icons/react';
 
 import {
-  Action, IconView,
+  Action,
+  IconView,
+  ActionProps,
 } from './styles';
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, ActionProps {
   children: React.ReactNode;
   onClick?: () => void;
   disabled?: boolean;
@@ -16,10 +18,14 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 export const Button: React.FC<ButtonProps> = ({
   children,
   Icon,
+  size = 'large',
+  fullWidth = false,
   ...rest
 }) => {
   return (
     <Action
+      fullWidth={ fullWidth }
+      size={ size }
      { ...rest }
     >
       { children }
