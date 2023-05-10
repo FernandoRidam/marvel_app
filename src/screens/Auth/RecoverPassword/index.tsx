@@ -36,6 +36,7 @@ import {
   Content,
   Form,
 } from '../styles';
+import { enqueueSnackbar } from 'notistack';
 
 export const RecoverPassword = () => {
   const navigate = useNavigate();
@@ -58,6 +59,10 @@ export const RecoverPassword = () => {
 
   const onSubmit = ( data: RecoveryPasswordFormData ) => {
     console.log( data );
+
+    enqueueSnackbar('Email enviado com sucesso!', {
+      variant: 'success',
+    });
 
     setSuccess( true );
   };
