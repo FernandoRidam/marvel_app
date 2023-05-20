@@ -2,7 +2,7 @@
 Aplicação em ReactJs para buscar, listar e detalhar personagens da **Marvel**.
 
 
-###Principais funcionalidades são:
+### Principais funcionalidades são:
 
 1. Listar agentes.
 2. Buscar agentes.
