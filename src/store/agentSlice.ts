@@ -1,8 +1,4 @@
 import {
-  useSelector,
-} from 'react-redux';
-
-import {
   PayloadAction,
   SliceCaseReducers,
   createSlice,

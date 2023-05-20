@@ -1,10 +1,4 @@
 import {
-  Route,
-  Routes,
-  Navigate,
-} from "react-router";
-
-import {
   BrowserRouter,
 } from "react-router-dom";
 
@@ -15,19 +9,7 @@ import {
 import {
   RootState,
 } from '../store';
-
-import {
-  AppLayout,
-  AuthLayout,
-} from "../layouts";
-
-import {
-  Home,
-  Login,
-  Profile,
-  RecoverPassword,
-  SelectAgent,
-} from "../screens";
+import { LayoutProvider } from './LayoutProvider';
 
 export const Router = () => {
   const {
@@ -38,59 +20,7 @@ export const Router = () => {
 
   return (
     <BrowserRouter>
-      {
-        !authenticated
-          ? (
-              <AuthLayout>
-                <Routes>
-                  <Route
-                    path="/*"
-                    element={<Navigate to="/login"/>}
-                  />
-
-                  <Route
-                    path="/login"
-                    element={<Login />}
-                  />
-
-                  <Route
-                    path="/recover-password"
-                    element={<RecoverPassword />}
-                  />
-
-                  <Route
-                    path="/select-agent"
-                    element={<SelectAgent />}
-                  />
-                </Routes>
-              </AuthLayout>
-            )
-          : (
-              <AppLayout>
-                <Routes>
-                  <Route
-                    path="/*"
-                    element={<Navigate to="/home"/>}
-                  />
-
-                  <Route
-                    path="/home"
-                    element={<Home />}
-                  />
-
-                  <Route
-                    path="/profile"
-                    element={<Profile />}
-                  />
-
-                  <Route
-                    path="/profile/:id"
-                    element={<Profile />}
-                  />
-                </Routes>
-              </AppLayout>
-            )
-      }
+      <LayoutProvider authenticated={ authenticated } />
     </BrowserRouter>
   );
 };

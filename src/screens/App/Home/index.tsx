@@ -21,6 +21,7 @@ import {
   Divider,
   Pagination,
   CardAgent,
+  Loading,
 } from '../../../components';
 
 import {
@@ -45,7 +46,7 @@ import {
 export const Home = () => {
   const navigate = useNavigate();
   const limit = 10;
-  const [ total, setTotal ] = useState<number>( 0 );
+  const [ total, setTotal ] = useState<number>( 10 );
   const [ page, setPage ] = useState<number>( 1 );
 
   const [ timeOut, setTimeOut ] = useState<NodeJS.Timeout>();
@@ -113,17 +114,23 @@ export const Home = () => {
 
       <Divider />
 
-      <GridView id="agent-grid-view-id">
-        {
-          agents.map(( agent ) =>
-            <CardAgent
-              key={ agent.id }
-              agent={ agent }
-              onClick={() => navigate(`/profile/${ agent.id }`)}
-            />
-          )
-        }
-      </GridView>
+      {
+        gettingAgents
+          ? <Loading />
+          : (
+            <GridView id="agent-grid-view-id">
+              {
+                agents.map(( agent ) =>
+                  <CardAgent
+                    key={ agent.id }
+                    agent={ agent }
+                    onClick={() => navigate(`/profile/${ agent.id }`)}
+                  />
+                )
+              }
+            </GridView>
+            )
+      }
 
       <PaginationView>
         <Pagination
